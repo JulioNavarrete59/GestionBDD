@@ -33,11 +33,62 @@ public class Conexion {
             + "trustServerCertificate=true;"
             + "loginTimeout=30;";
 
+    
     public static Connection getConection() throws SQLException {
         return DriverManager.getConnection(connectionUrl);
     }
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void ejecutarConsultaSinResultado(String queryString) throws SQLException {
         Connection con = getConection();
         Statement st = con.createStatement();
@@ -55,6 +106,48 @@ public class Conexion {
         PreparedStatement st = con.prepareStatement(queryString);
         return st;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /*Se esta creando la tabla de manera automática*/
     public static DefaultTableModel verVistas(String Vista) throws SQLException {

@@ -5,9 +5,15 @@
  */
 package sector_minero_g1;
 
+import java.awt.Component;
+import java.awt.PopupMenu;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -34,7 +40,7 @@ public class WelcomeHome extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        btn_regresarMP = new javax.swing.JButton();
+        btn_diccionario = new javax.swing.JButton();
         btn_ingresarSistema = new javax.swing.JButton();
         btn_quienesSomos = new javax.swing.JButton();
         btn_salirSistema = new javax.swing.JButton();
@@ -43,6 +49,7 @@ public class WelcomeHome extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btn_Regreseishon = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,12 +57,12 @@ public class WelcomeHome extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btn_regresarMP.setBackground(new java.awt.Color(204, 153, 0));
-        btn_regresarMP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volver.png"))); // NOI18N
-        btn_regresarMP.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_regresarMP.addActionListener(new java.awt.event.ActionListener() {
+        btn_diccionario.setBackground(new java.awt.Color(204, 153, 0));
+        btn_diccionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/diccionario.png"))); // NOI18N
+        btn_diccionario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_diccionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_regresarMPActionPerformed(evt);
+                btn_diccionarioActionPerformed(evt);
             }
         });
 
@@ -101,7 +108,7 @@ public class WelcomeHome extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("REGRESAR");
+        jLabel5.setText("DICCIONARIO");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -116,7 +123,7 @@ public class WelcomeHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn_quienesSomos, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_regresarMP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_diccionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(52, 52, 52))
@@ -137,7 +144,7 @@ public class WelcomeHome extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_regresarMP, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_diccionario, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_salirSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -154,12 +161,23 @@ public class WelcomeHome extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/G1_Logo_SectorMinero.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
+        btn_Regreseishon.setBackground(new java.awt.Color(204, 153, 0));
+        btn_Regreseishon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volverblanco.png"))); // NOI18N
+        btn_Regreseishon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegreseishonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btn_Regreseishon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -168,9 +186,13 @@ public class WelcomeHome extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_Regreseishon)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -204,17 +226,35 @@ public class WelcomeHome extends javax.swing.JFrame {
         }  
     }//GEN-LAST:event_btn_salirSistemaActionPerformed
 
-    private void btn_regresarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarMPActionPerformed
-        Sistema_G1 menu = new Sistema_G1();
-        menu.show(); //Muestra el login
-        dispose(); //Cierra el jframe actual
-    }//GEN-LAST:event_btn_regresarMPActionPerformed
+    private void btn_diccionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_diccionarioActionPerformed
+        List<DictionaryData> dictionaryDataList = Diccionario.obtenerDatosDiccionario();
+        CustomDictionaryTableModel model = new CustomDictionaryTableModel(dictionaryDataList);
+
+        // Crear la tabla y asignar el modelo a la tabla
+        JTable miTabla = new JTable(model);
+
+        // Crear el JScrollPane y agregar la tabla
+        JScrollPane scrollPane = new JScrollPane(miTabla);
+
+        // Crear la ventana para mostrar la tabla
+        JFrame frame = new JFrame("Diccionario de Datos");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.add(scrollPane);
+        frame.pack();
+        frame.setVisible(true);
+    }//GEN-LAST:event_btn_diccionarioActionPerformed
 
     private void btn_quienesSomosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quienesSomosActionPerformed
         quienesSomos ventana = new quienesSomos();
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_quienesSomosActionPerformed
+
+    private void btn_RegreseishonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegreseishonActionPerformed
+        Sistema_G1 menu = new Sistema_G1();
+        menu.show(); //Muestra el login
+        dispose(); //Cierra el jframe actual
+    }//GEN-LAST:event_btn_RegreseishonActionPerformed
 
     
     /**
@@ -251,11 +291,15 @@ public class WelcomeHome extends javax.swing.JFrame {
             }
         });
     }
+    private List<DictionaryData> obtenerDatosDiccionario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Regreseishon;
+    private javax.swing.JButton btn_diccionario;
     private javax.swing.JButton btn_ingresarSistema;
     private javax.swing.JButton btn_quienesSomos;
-    private javax.swing.JButton btn_regresarMP;
     private javax.swing.JButton btn_salirSistema;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
